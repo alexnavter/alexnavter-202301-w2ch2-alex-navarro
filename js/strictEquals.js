@@ -1,13 +1,21 @@
-import strictEquals from "/js/strictEquals.js";
+const strictEquals = (valueA, valueB) => {
+  const checkIfTrue = Object.is(valueA, valueB);
 
-console.log(strictEquals(1, 1));
-console.log(strictEquals(NaN, NaN)); // Rule exception
-console.log(strictEquals(0, -0)); // Rule exception
-console.log(strictEquals(-0, 0)); // Rule exception
-console.log(strictEquals(1, "1"));
-console.log(strictEquals(true, false));
-console.log(strictEquals(false, false));
-console.log(strictEquals("Water", "oil"));
+  if (Number.isNaN(valueA) && Number.isNaN(valueB)) {
+    return false;
+  }
+  if (Object.is(valueA, 0) && Object.is(valueB, -0)) {
+    return true;
+  }
+  if (Object.is(valueA, -0) && Object.is(valueB, 0)) {
+    return true;
+  }
+  return checkIfTrue;
+};
+Ç
+expo
+
+rt default strictEquals;
 
 /* 
 | valueA  | valueB | RESULT |                   |
