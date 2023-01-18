@@ -12,10 +12,8 @@ const strictEquals = (valueA, valueB) => {
   }
   return checkIfTrue;
 };
-Ç
-expo
 
-rt default strictEquals;
+export default strictEquals;
 
 /* 
 | valueA  | valueB | RESULT |                   |
